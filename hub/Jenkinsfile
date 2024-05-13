@@ -2,17 +2,13 @@ pipeline{
     agent any
     stages{
         stage('unit test code'){
+            agent {  docker { image 'circleci/node:10/15.3' } }
             steps{
-                agent{
-                    docker{
-                        image 'circleci/node:10/15.3'
-                    }
+                dir('/tmp'){
+                    sh 'ls'
+                    sh 'echo hii'
                 }
-
-                checkout([$class: 'GitSCM', branches: [[name: env.GIT_BRANCH]], userRemoteConfigs: [[url: 'https://github.com/karthi0102/JENKINS_FILES.git']]])
-
-                sh 'ls -l'
-             }   
+            }   
                 
             
         }
