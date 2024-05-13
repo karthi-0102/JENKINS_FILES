@@ -4,7 +4,8 @@ pipeline{
         stage('unit test code'){
             //agent {  docker { image 'circleci/node:10.15.3' } }
             steps{
-                dir('/tmp'){
+                sh 'mkdir -p /tmp/hub-buildDir/hub'
+                dir('/tmp/hub-buildDir/hub'){
                     sh 'ls'
                     sh 'echo hii'
                 }
