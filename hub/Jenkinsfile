@@ -1,13 +1,21 @@
 pipeline{
-    agent {
-        docker {
-            image 'circleci/node:10.15.3'
-        }
-    }
+    agent any
     stages{
         stage('unit test code'){
             steps{
+
+             dir('/tmp/hub-buildDir/hub'){
+                agent {
+                    docker {
+                        image 'circleci/node:10/15.3'
+                    }
+                }
+
+                checkout([$class: 'GitSCM', branches: [[name: env.GIT_BRANCH]], userRemoteConfigs: [[url: 'https://github.com/karthi0102/JENKINS_FILES.git']]])
+
                 sh 'ls -l'
+             }   
+                
             }
         }
     }
