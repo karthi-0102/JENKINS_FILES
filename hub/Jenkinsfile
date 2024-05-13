@@ -2,16 +2,16 @@ pipeline{
     agent any 
     stages{
         stage('unit test code'){
+            agent {  docker { image 'circleci/node:10.15.3' } }
+            
             steps{
                 sh 'mkdir -p /tmp/hub-buildDir/hub'
                 dir('/tmp/hub-buildDir/hub'){
-                    agent {  docker { image 'circleci/node:10.15.3' } }
                     sh 'ls'
                     sh 'echo hii'
                 }
             }   
                 
-            
         }
     }
 
