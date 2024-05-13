@@ -3,8 +3,6 @@ pipeline{
     stages{
         stage('unit test code'){
             steps{
-
-             dir('/tmp/hub-buildDir/hub'){
                 agent{
                     docker{
                         image 'circleci/node:10/15.3'
@@ -16,7 +14,7 @@ pipeline{
                 sh 'ls -l'
              }   
                 
-            }
+            
         }
     }
 
