@@ -2,7 +2,7 @@ pipeline{
     agent any
     stages{
         stage('unit test code'){
-            agent {  docker { image 'circleci/node:10/15.3' } }
+            agent {  docker { image 'circleci/node:10.15.3' } }
             steps{
                 dir('/tmp'){
                     sh 'ls'
