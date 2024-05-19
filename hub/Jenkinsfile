@@ -9,6 +9,7 @@ pipeline{
                     sh 'ls'
                     sh 'cd hub && ls'
                     sh 'find ./ -name Jenkinsfile'
+                     sh 'find ./ -name index.js'
                     sh 'echo hii'
                      
                 }
