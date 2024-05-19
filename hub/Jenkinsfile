@@ -5,7 +5,8 @@ pipeline{
             steps{
                 sh 'mkdir -p /tmp/hub-buildDir/hub'
                 dir('/tmp/hub-buildDir/hub'){
-                    ls
+                    checkout scm
+                    sh 'ls'
                      
                 }
             }   
