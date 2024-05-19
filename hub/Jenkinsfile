@@ -7,7 +7,7 @@ pipeline{
                 dir('/tmp/hub-buildDir/hub'){
                     checkout scm
                     sh 'ls'
-                    sh 'cd hub'
+                    sh 'cd hub && ls'
                     sh 'find ./ -name Jenkinsfile'
                     sh 'echo hii'
                      
