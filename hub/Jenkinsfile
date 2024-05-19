@@ -9,6 +9,7 @@ pipeline{
                     sh 'ls'
                     sh 'cd hub'
                     sh 'ls'
+                    sh 'echo hii'
                      
                 }
             }   
