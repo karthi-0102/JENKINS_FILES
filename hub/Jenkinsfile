@@ -7,6 +7,8 @@ pipeline{
                 dir('/tmp/hub-buildDir/hub'){
                     checkout scm
                     sh 'ls'
+                    sh 'cd hub'
+                    sh 'ls'
                      
                 }
             }   
