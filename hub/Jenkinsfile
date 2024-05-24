@@ -1,31 +1,35 @@
-//library('runUnitTest')
-
 pipeline{
-    agent none
+    agent any
     
 
     stages{
-        stage('V2-unit test'){
-
-            agent { docker  { image 'node:10.15.3' } }
-            
+       stage('Code-checkout'){
             environment {
                     CURRENT_HUB = "V2"
                     COVERAGE_THRESHOLD = 80
                     COVERAGE_MAX_DIFF = 1
             }
+                    
+            steps{
+                dir('/tmp/hub-buildDir/hub'){
+                    checkout scm         
+                }  
+            }
+        }
+
+        stage('install packages'){
+            agent {
+                docker{
+                    image 'node:10.15.3'
+                }
+            }
 
             steps{
-                sh 'mkdir -p /tmp/hub-buildDir/hub'
-               
                 dir('/tmp/hub-buildDir/hub'){
-                    checkout scm
-                    sh 'ls'
-                    echo "${env.GIT_BRANCH}"
-                    
+                    npm install
                 }
-            }   
-                
+            }
         }
-    }
+
+    }   
 }
