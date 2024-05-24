@@ -20,9 +20,8 @@ pipeline{
                
                 dir('/tmp/hub-buildDir/hub'){
                     checkout scm
-                    sh'ls'
+                    sh 'ls'
                     echo "${env.GIT_BRANCH}"
-                    
                     
                 }
             }   
