@@ -1,16 +1,26 @@
+@Library('runUnitTest')
+
 pipeline{
     agent any
+    
+
     stages{
-        stage('unit test code'){
+        stage('V2-unit test'){
+            agent{ docker  { image:node:10.15.3 }}
+            environment {
+                    CURRENT_HUB = "V2"
+                    COVERAGE_THRESHOLD: 80
+                    COVERAGE_MAX_DIFF: 1
+                }
             steps{
                 sh 'mkdir -p /tmp/hub-buildDir/hub'
+               
                 dir('/tmp/hub-buildDir/hub'){
                     checkout scm
-                    sh 'ls'
-                    sh 'cd hub && ls'
-                    sh 'find ./ -name Jenkinsfile'
-                    sh 'echo hii'
-                     
+                    
+                    runUnitTest
+                    
+                    
                 }
             }   
                 
