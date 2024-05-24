@@ -1,0 +1,26 @@
+{
+  "name": "Jenkins",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha --timeout=3000 ./test/*",
+    "coverage": "nyc --reporter=html --reporter=json-summary --check-coverage=true npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/karthi-0102/JENKINS_FILES.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/karthi-0102/JENKINS_FILES/issues"
+  },
+  "homepage": "https://github.com/karthi-0102/JENKINS_FILES#readme",
+  "dependencies": {
+    "mocha": "^5.2.0",
+    "nyc": "^15.1.0",
+    "sinon": "^2.1.0"
+  }
+}
