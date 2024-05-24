@@ -16,7 +16,15 @@ pipeline{
             }
 
             steps{
-              sh'printenv'
+                sh 'mkdir -p /tmp/hub-buildDir/hub'
+               
+                dir('/tmp/hub-buildDir/hub'){
+                    checkout scm
+                    echo "hii"
+                    echo "${env.GIT_BRANCH}"
+                    
+                    
+                }
             }   
                 
         }
