@@ -1,4 +1,4 @@
-@Library('runUnitTest')
+library('runUnitTest')
 
 pipeline{
     agent any
@@ -18,7 +18,8 @@ pipeline{
                 dir('/tmp/hub-buildDir/hub'){
                     checkout scm
                     
-                    runUnitTest
+                    echo "$BRANCH_NAME"
+                    
                     
                     
                 }
