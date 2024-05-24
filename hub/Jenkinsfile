@@ -11,8 +11,8 @@ pipeline{
             
             environment {
                     CURRENT_HUB = "V2"
-                    COVERAGE_THRESHOLD: 80
-                    COVERAGE_MAX_DIFF: 1
+                    COVERAGE_THRESHOLD = 80
+                    COVERAGE_MAX_DIFF = 1
             }
 
             steps{
