@@ -21,8 +21,7 @@ pipeline{
                 dir('/tmp/hub-buildDir/hub'){
                     checkout scm
                     
-                    echo "${BRANCH_NAME}"'
-                    
+                    echo ${BRANCH_NAME}                    
                     
                     
                 }
