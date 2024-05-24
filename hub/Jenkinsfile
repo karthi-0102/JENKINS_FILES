@@ -6,7 +6,8 @@ pipeline{
 
     stages{
         stage('V2-unit test'){
-            agent { docker  { image:node:10.15.3 } }
+
+            agent { docker  { image 'node:10.15.3' } }
             
             environment {
                     CURRENT_HUB = "V2"
