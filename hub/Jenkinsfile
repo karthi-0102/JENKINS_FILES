@@ -20,7 +20,7 @@ pipeline{
                
                 dir('/tmp/hub-buildDir/hub'){
                     checkout scm
-                    sh 'pwd'
+                    sh'pwd'
                     echo "hii"
                     echo "${env.BRANCH_NAME}"                    
                     
