@@ -1,5 +1,9 @@
 pipeline{
-    agent any
+    agent {
+        docker {
+            image 'node:10.15.3'
+        }
+    }
     
 
     stages{
@@ -19,11 +23,7 @@ pipeline{
         }
 
         stage('install packages'){
-            agent {
-                docker{
-                    image 'node:10.15.3'
-                }
-            }
+          
 
             steps{
                 sh 'node --version'
