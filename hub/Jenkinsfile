@@ -4,6 +4,11 @@ pipeline{
             image 'node:10.15.3'
         }
     }
+
+    environment {
+        NPM_CONFIG_CACHE = "${WORKSPACE}/.npm"
+    }
+
     
 
     stages{
