@@ -4,7 +4,7 @@ pipeline{
 
     stages{
        stage('Code-checkout'){
-            agent { label 'linux' }
+           
             environment {
                     CURRENT_HUB = "V2"
                     COVERAGE_THRESHOLD = 80
@@ -13,7 +13,7 @@ pipeline{
                     
             steps{
                 dir('/tmp/hub-buildDir/hub'){
-                    checkout scm         
+                    //checkout scm         
                 }  
             }
         }
