@@ -24,12 +24,14 @@ pipeline{
 
         stage('install packages'){
           
-
             steps{
-                sh 'node --version'
                 dir('/tmp/hub-buildDir/hub'){
-                   sh 'ls'
-                   sh 'node --version'
+                    script {
+                        sh 'node --version'
+                        sh 'ls'
+                        sh 'node --version'
+
+                    }
                 }
             }
         }
