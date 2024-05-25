@@ -16,23 +16,17 @@ pipeline{
             }
                     
             steps{
-                dir('/tmp/hub-buildDir/hub'){
-                    checkout scm         
-                }  
+                checkout scm
+                sh 'ls'       
             }
         }
 
         stage('install packages'){
           
             steps{
-                dir('/tmp/hub-buildDir/hub'){
-                    script {
-                        sh 'node --version'
-                        sh 'ls'
-                        sh 'node --version'
-
-                    }
-                }
+                sh 'ls'
+                sh 'npm install'
+                sh 'ls'
             }
         }
 
