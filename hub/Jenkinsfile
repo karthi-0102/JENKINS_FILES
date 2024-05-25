@@ -26,10 +26,12 @@ pipeline{
             }
 
             steps{
+              node{ 
                 sh 'node --version'
                 dir('/tmp/hub-buildDir/hub'){
                     sh 'npm install'
                 }
+              }
             }
         }
 
